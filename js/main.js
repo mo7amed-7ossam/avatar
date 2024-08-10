@@ -7,6 +7,6 @@ $(window).scroll(function () {
     console.log(top)
     if (top > 0) {
         
-        $(".avatar img").attr("https://mo7amed-7ossam.github.io/avatar/imgs/avatar/mohamedHossam%20(" + top + ").png")
+        $(".avatar img").attr("https://raw.githubusercontent.com/mo7amed-7ossam/avatar/main/imgs/avatar/mohamedHossam%20("+top+").png")
     }
 })
