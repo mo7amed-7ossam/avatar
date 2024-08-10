@@ -1,12 +1,46 @@
 for (i = 2; i <= 300; i++) {
-    $(".avatar").append("<img src='img/avatar/mohamedHossam (" + i + ").webp' >")
+    $(".avatar .child").append("<img src='imgs/avatar/mohamedHossam (" + i + ").webp' >")
 }
 
+scrollFollow = 0
+
+let fullScroll = $("html").height() - $(window).height();
 $(window).scroll(function () {
-    let fullScroll = $("html").height() - $(window).height();
-    let top = Math.round($(this).scrollTop() / fullScroll * 300);
-    if (top > 0) {
-        $(".avatar img").removeClass("active")
-        $(".avatar img:nth-child(" + top + ")").addClass("active")
+    scrollNow = $(this).scrollTop();
+    if (scrollNow > scrollFollow) {
+        go_down = setInterval(function () {
+            if (scrollFollow < scrollNow) {
+                scrollFollow++;
+                let slide = Math.round(scrollFollow / fullScroll * 300);
+                $(".avatar img").removeClass("active")
+                $(".avatar .child img:nth-child(" + slide + ")").addClass("active")
+            } else {
+                clearInterval(go_down)
+            }
+        }, 50)
+
+    } else if ((scrollNow < scrollFollow )) {
+        go_up = setInterval(function () {
+            if (scrollFollow > scrollNow) {
+                scrollFollow--;
+                console.log(scrollFollow)
+                let slide = Math.round(scrollFollow / fullScroll * 300) + 1;
+                $(".avatar img").removeClass("active")
+                $(".avatar .child img:nth-child(" + slide + ")").addClass("active")
+            } else {
+                clearInterval(go_up)
+            }
+        }, 50)
     }
+
 })
+
+
+
+// $(window).scroll(function () {
+    
+// })
+
+
+
+
