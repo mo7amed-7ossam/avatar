@@ -1,12 +1,13 @@
+for (i = 2; i <= 300; i++) {
+    $(".avatar").append("<img src='imgs/avatar/mohamedHossam (" + i + ").png' >")
+}
+
 $(window).scroll(function () {
     let fullScroll = $("html").height() - $(window).height();
-
-    let img = fullScroll / 300;
-
     let top = Math.round($(this).scrollTop() / fullScroll * 300);
     console.log(top)
     if (top > 0) {
-        
-        $(".avatar img").attr("src","https://raw.githubusercontent.com/mo7amed-7ossam/avatar/main/imgs/avatar/mohamedHossam%20("+ top +").png")
+        $(".avatar img").removeClass("active")
+        $(".avatar img:nth-child(" + top + ")").addClass("active")
     }
 })
