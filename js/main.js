@@ -1,5 +1,5 @@
 for (i = 2; i <= 300; i++) {
-    $(".avatar").append("<img src='imgs/avatar/mohamedHossam (" + i + ").png' >")
+    $(".avatar").append("<img src='img/avatar/mohamedHossam (" + i + ").png' >")
 }
 
 $(window).scroll(function () {
