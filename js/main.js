@@ -6,6 +6,7 @@ $(window).scroll(function () {
     let top = Math.round($(this).scrollTop() / fullScroll * 300);
     console.log(top)
     if (top > 0) {
-        $(".avatar img").attr("src", "imgs/avatar/mohamedHossam (" + top + ").png")
+        
+        $(".avatar img").attr("https://mo7amed-7ossam.github.io/avatar/imgs/avatar/mohamedHossam%20(" + top + ").png")
     }
 })
