@@ -9,7 +9,7 @@ document.onreadystatechange = function () {
 };
 $(document).ready(function () {
     for (let i = 2; i <= 300; i++) {
-        $(".avatar .child").append("<img src='img/avatar/mohamedHossam (" + i + ").webp' >");
+        $(".avatar .child").append("<img data-src='img/avatar/mohamedHossam (" + i + ").webp' class='lazyload'>");
     }
 
     let scrollFollow = 0;
@@ -25,6 +25,8 @@ $(document).ready(function () {
         let scrollNow = $(this).scrollTop();
         scrollFollow = scrollNow;
 
-        updateActiveSlide(scrollFollow);
+        requestAnimationFrame(function () {
+            updateActiveSlide(scrollFollow);
+        });
     });
 });
