@@ -1,5 +1,5 @@
 for (i = 2; i <= 300; i++) {
-    $(".avatar .child").append("<img src='imgs/avatar/mohamedHossam (" + i + ").webp' >")
+    $(".avatar .child").append("<img src='img/avatar/mohamedHossam (" + i + ").webp' >")
 }
 
 scrollFollow = 0
